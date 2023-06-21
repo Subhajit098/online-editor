@@ -60,7 +60,10 @@ export default function Editor({heading,color,value,onChange}) {
     {/* Editor tab */}
         <Box>
             <ControlledEditor className='controlled-editor'
-                options={{theme:"material",lineNumbers:true}}  value={value} onBeforeChange={handleChange} 
+                options={{theme:"material",lineNumbers:true,extraKeys: {
+				Tab: 'emmetExpandAbbreviation',
+				Enter: 'emmetInsertLineBreak'
+			}}}  value={value} onBeforeChange={handleChange} 
             />
         </Box>
     </Container>
